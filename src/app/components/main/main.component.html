@@ -1,0 +1,10 @@
+<header class="mainColourHeader">
+   <p class="headerText"> la liste des couleurs</p>
+</header>
+<section class="bounceStage">
+<div *ngFor="let colour of partList; let i = index" [attr.id]="'floatingHex' + i">
+    <div [attr.id]="'floatingInner' + i">
+    {{colour.hex}}
+        </div>
+</div>
+</section>
