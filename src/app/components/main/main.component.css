@@ -15,7 +15,7 @@
     align-items: center;
     text-transform: uppercase;
     box-shadow: #000 5px 5px 5px;
-    
+    margin-bottom: 100px;
     
 }
 .headerText {
@@ -41,9 +41,22 @@ font-weight: 900;
 
 }
 .colourBlock {
-    font-size: 14px;
+font-size: 14px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 width: 12.2%;
-border: solid 1px red;
 height: 10%;
 margin: 1%;
+overflow: hidden;
+border-radius: 10px;
+color: #fff;
+text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
+
+@media screen and (max-width: 600px) {
+    .colourBlock {
+     font-size: 10px;
+    }
+  }

@@ -3,7 +3,7 @@
 </header>
 
 <section class="container">
-    <div *ngFor="let col of colourList" class="colourBlock">{{col.name}}</div>
+    <div *ngFor="let col of colourList" class="colourBlock" [style.background]="col.hex">{{col.name}}</div>
 </section>
 
 <!--section class="bounceStage">
