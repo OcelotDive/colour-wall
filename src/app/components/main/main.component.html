@@ -12,10 +12,10 @@
 </div>
 </section>
 <section class="colourContainer">
-    <div *ngFor="let col of displayList" class="colourBlock" [style.background]="col.hex">
+    <div *ngFor="let col of displayList" class="colourBlock" [style.background]="col.hex" ata-toggle="tooltip" data-placement="top" title="Click to Copy Hex to Clipboard">
         <p>{{col.name}}</p>
         <p>{{col.hex}}</p>
-        <p class="hexText">{{"Click to Copy Hex Code"}}</p>
+   
     </div>
     
 </section>
