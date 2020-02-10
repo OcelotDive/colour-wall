@@ -11,6 +11,7 @@ import { InvestorService } from '../../services/investor.service';
 export class MainComponent implements OnInit {
   colourList: Object[][];
   displayList: Object[];
+  searchText: string = "";
   
 
   constructor(public investorService: InvestorService) {

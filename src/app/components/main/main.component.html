@@ -2,7 +2,7 @@
    <p class="headerText"> la liste des couleurs</p>
 </header>
 <form>
-    <input type="text" class="form-control form-control-lg" id="colourSearch" placeholder="Name or Hex"/> 
+    <input type="text" class="form-control form-control-lg" id="colourSearch" placeholder="Name or Hex" [(ngModel)]="searchText"/> 
 </form>
 <section class="radioContainer">
 <div *ngFor="let arr of colourList; let i = index" class="tabWrapper" (click)="handleTabClick(i)">
