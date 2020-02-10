@@ -1,9 +1,23 @@
 <header class="mainColourHeader">
    <p class="headerText"> la liste des couleurs</p>
 </header>
+<form>
+    <input type="text" class="form-control form-control-lg" id="colourSearch" placeholder="Name or Hex"/> 
+</form>
+<section class="radioContainer">
+<div *ngFor="let arr of colourList; let i = index" class="tabWrapper" (click)="handleTabClick(i)">
+<input name="tabs" type="radio" checked="checked" class="radioInput" [attr.id]="'tab' + i" >
+<label  class="tabLabel" [attr.for]="'tab' + i">{{colourList.length - i}}</label>
 
-<section class="container">
-    <div *ngFor="let col of colourList" class="colourBlock" [style.background]="col.hex">{{col.name}}</div>
+</div>
+</section>
+<section class="colourContainer">
+    <div *ngFor="let col of displayList" class="colourBlock" [style.background]="col.hex">
+        <p>{{col.name}}</p>
+        <p>{{col.hex}}</p>
+        <p class="hexText">{{"Click to Copy Hex Code"}}</p>
+    </div>
+    
 </section>
 
 <!--section class="bounceStage">

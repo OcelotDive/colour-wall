@@ -9,18 +9,36 @@ import { InvestorService } from '../../services/investor.service';
   providers: [InvestorService]
 })
 export class MainComponent implements OnInit {
-  colourList: Object[];
-  partList: Object[];
+  colourList: Object[][];
+  displayList: Object[];
+  
 
   constructor(public investorService: InvestorService) {
 
    this.investorService.getMatchInfo().subscribe((data: any) => {
-      this.colourList = data;
-      this.partList = this.colourList.slice(0, 10);
-    });
-    
-    
+      this.colourList = this.selectionPages(data, 1000).reverse();
+      this.displayList = this.colourList[this.colourList.length - 1];
+    }); 
+  
   }
+
+
+  selectionPages(colourArray: Object[], amountPerSection: number): Object[][] {
+    let pageArray = [], i, j;
+    for (i = 0, j = -1; i < colourArray.length; i++) {
+      if (i % amountPerSection === 0) {
+        j++;
+        pageArray[j] = [];
+      }
+      pageArray[j].push(colourArray[i]);
+    }
+    return pageArray;
+  }
+
+  handleTabClick(index: number) {
+    this.displayList = this.colourList[index];
+  }
+
 
   ngOnInit() {
     
