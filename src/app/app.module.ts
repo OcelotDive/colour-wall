@@ -17,6 +17,7 @@ import { MainComponent } from './components/main/main.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
                     

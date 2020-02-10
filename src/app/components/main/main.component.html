@@ -2,7 +2,7 @@
    <p class="headerText"> la liste des couleurs</p>
 </header>
 <form>
-    <input type="text" class="form-control form-control-lg" id="colourSearch" placeholder="Name or Hex" [(ngModel)]="searchText"/> 
+    <input type="text" name="searchBox" class="form-control form-control-lg" id="colourSearch" placeholder="Name or Hex" [(ngModel)]="searchText"/> 
 </form>
 <section class="radioContainer">
 <div *ngFor="let arr of colourList; let i = index" class="tabWrapper" (click)="handleTabClick(i)">
@@ -11,13 +11,17 @@
 
 </div>
 </section>
-<section class="colourContainer">
+<section class="colourContainer" *ngIf="searchText === ''">
     <div *ngFor="let col of displayList" class="colourBlock" [style.background]="col.hex" ata-toggle="tooltip" data-placement="top" title="Click to Copy Hex to Clipboard">
         <p>{{col.name}}</p>
         <p>{{col.hex}}</p>
-   
     </div>
-    
+</section>
+<section class="colourContainer" *ngIf="searchText !== ''">
+    <div *ngFor="let col of fullList" class="colourBlock" [style.background]="col.hex" ata-toggle="tooltip" data-placement="top" title="Click to Copy Hex to Clipboard | colourFilter: searchText">
+        <p>{{col.name}}</p>
+        <p>{{col.hex}}</p>
+    </div>
 </section>
 
 <!--section class="bounceStage">

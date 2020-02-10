@@ -9,6 +9,7 @@ import { InvestorService } from '../../services/investor.service';
   providers: [InvestorService]
 })
 export class MainComponent implements OnInit {
+  fullList: Object[];
   colourList: Object[][];
   displayList: Object[];
   searchText: string = "";
@@ -17,12 +18,11 @@ export class MainComponent implements OnInit {
   constructor(public investorService: InvestorService) {
 
    this.investorService.getMatchInfo().subscribe((data: any) => {
+      this.fullList = data;
       this.colourList = this.selectionPages(data, 1000).reverse();
       this.displayList = this.colourList[this.colourList.length - 1];
     }); 
-  
   }
-
 
   selectionPages(colourArray: Object[], amountPerSection: number): Object[][] {
     let pageArray = [], i, j;
