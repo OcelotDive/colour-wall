@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
   colourList: Object[][];
   displayList: Object[];
   searchText: string = "";
+  notFullList: boolean = false;
 
   
   constructor(public investorService: InvestorService) {

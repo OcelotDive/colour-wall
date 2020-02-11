@@ -51,23 +51,16 @@ form {
 
 .tabLabel {
     width: 100%;
-    padding: 10px 15px;
-    background: #000428;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #004e92, #000428);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #004e92, #000428);
+    background: #004e92;
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     cursor: pointer;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 8px;
     color: #fff;
     border: solid 2px black;
     transition: background 0.1s, color 0.1s;
-    border-radius: 5px;
-    margin: -5px;
-    box-shadow: -5px 5px 5px #000;
-    padding: 15px;
+    box-shadow: 5px 0px -5px #000;
+    padding: 2px;
     -webkit-user-select: none;
     /* Safari */
     -moz-user-select: none;
@@ -76,6 +69,8 @@ form {
     /* IE10+/Edge */
     user-select: none;
     /* Standard */
+    text-indent: 13px;
+    border-radius: 5px;
 }
 
 .tabLabel:hover {
@@ -92,6 +87,7 @@ form {
     box-shadow: none;
     box-shadow: 5px -5px -5px #000;
     margin-top: 1px;
+    transform: scale(0.9)
 }
 
 .colourContainer {
@@ -119,7 +115,7 @@ form {
     text-align: center;
     box-shadow: 5px 5px 5px #000;
     transition: all .2s ease-in-out;
-    padding: 5px;
+    padding: 15px;
     padding-top: 25px;
     -webkit-user-select: none;
     /* Safari */
