@@ -1,28 +1,29 @@
 <header class="mainColourHeader">
-   <p class="headerText"> la liste des couleurs</p>
+    <p class="headerText"> la liste des couleurs</p>
 </header>
 <form>
-    <input type="text" name="searchBox" class="form-control form-control-lg" id="colourSearch" placeholder="Name or Hex" [(ngModel)]="searchText"/> 
+    <input type="text" name="searchBox" class="form-control form-control-lg" id="colourSearch" placeholder="Name or Hex" [(ngModel)]="searchText" />
 </form>
 <section class="radioContainer">
-<div *ngFor="let arr of colourList; let i = index" class="tabWrapper" (click)="handleTabClick(i)">
-<input name="tabs" type="radio" checked="checked" class="radioInput" [attr.id]="'tab' + i" >
-<label  class="tabLabel" [attr.for]="'tab' + i">{{colourList.length - i}}</label>
-
-</div>
+    <div *ngFor="let arr of colourList; let i = index" class="tabWrapper" (click)="handleTabClick(i)">
+        <input name="tabs" type="radio" checked="checked" class="radioInput" [attr.id]="'tab' + i">
+        <label class="tabLabel" [attr.for]="'tab' + i">{{colourList.length - i}}</label>
+    </div>
 </section>
-<section class="colourContainer" *ngIf="searchText === ''">
+<section class="colourContainer" *ngIf="searchText <= 1">
     <div *ngFor="let col of displayList" class="colourBlock" [style.background]="col.hex" ata-toggle="tooltip" data-placement="top" title="Click to Copy Hex to Clipboard">
         <p>{{col.name}}</p>
         <p>{{col.hex}}</p>
     </div>
 </section>
-<section class="colourContainer" *ngShow="searchText !== ''">
-    <div *ngFor="let col of fullList" class="colourBlock" [style.background]="col.hex" ata-toggle="tooltip" data-placement="top" title="Click to Copy Hex to Clipboard | colourFilter: searchText">
+
+<section class="colourContainer" *ngIf="searchText.length > 1">
+    <div *ngFor="let col of fullList | searchByColour : searchText" [style.background]="col.hex" class="colourBlock" data-toggle="tooltip" data-placement="top" title="Click to Copy Hex to Clipboard">
         <p>{{col.name}}</p>
         <p>{{col.hex}}</p>
     </div>
 </section>
+
 
 <!--section class="bounceStage">
 <div *ngFor="let colour of colourList; let i = index" [attr.id]="'floatingHex' + i">

@@ -13,8 +13,8 @@ export class MainComponent implements OnInit {
   colourList: Object[][];
   displayList: Object[];
   searchText: string = "";
-  
 
+  
   constructor(public investorService: InvestorService) {
 
    this.investorService.getMatchInfo().subscribe((data: any) => {
@@ -22,6 +22,7 @@ export class MainComponent implements OnInit {
       this.colourList = this.selectionPages(data, 1000).reverse();
       this.displayList = this.colourList[this.colourList.length - 1];
     }); 
+   
   }
 
   selectionPages(colourArray: Object[], amountPerSection: number): Object[][] {
@@ -42,7 +43,7 @@ export class MainComponent implements OnInit {
 
 
   ngOnInit() {
-    
+   
   }
 
 }

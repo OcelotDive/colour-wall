@@ -15,9 +15,9 @@
     text-transform: uppercase;
     box-shadow: #000 5px 5px 5px;
     margin-bottom: 100px;
-  }
-  
-  .headerText {
+}
+
+.headerText {
     background-image: linear-gradient(to left, violet, rgb(126, 0, 130), rgb(0, 255, 255), green, yellow, orange, red);
     -webkit-background-clip: text;
     -webkit-background-clip: text;
@@ -28,30 +28,36 @@
     white-space: nowrap;
     margin-left: 20px;
     font-weight: 900;
-  }
+}
 
-  #colourSearch {
-      width: 24%;
-  }
-    form {
+#colourSearch {
+    width: 24%;
+}
+
+form {
     display: flex;
     justify-content: center;
 }
 
-  .radioContainer {
+.radioContainer {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
-     width: 100%;
-     height: auto;
-     justify-content: center;
-     margin-top: 40px; 
-  }
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    margin-top: 40px;
+}
 
 .tabLabel {
     width: 100%;
     padding: 10px 15px;
-    background-color: #004e92;
+    background: #000428;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     cursor: pointer;
     font-weight: bold;
     font-size: 12px;
@@ -62,40 +68,42 @@
     margin: -5px;
     box-shadow: -5px 5px 5px #000;
     padding: 15px;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-    
-  }
-  .tabLabel:hover {
-    background: #d8d8d8;
-  }
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
 
-  .radioInput{
+.tabLabel:hover {
+    background: #d8d8d8;
+}
+
+.radioInput {
     visibility: hidden;
-  }
-  .radioInput:checked + .tabLabel {
+}
+
+.radioInput:checked+.tabLabel {
     background: #fff;
     color: #000;
     box-shadow: none;
     box-shadow: 5px -5px -5px #000;
     margin-top: 1px;
-   
+}
 
-  }
-
-  .colourContainer {
+.colourContainer {
     position: relative;
     height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     padding: 2%;
+}
 
-  }
-  
-  .colourBlock {
+.colourBlock {
     font-size: 14px;
     display: flex;
     flex-direction: column;
@@ -113,22 +121,23 @@
     transition: all .2s ease-in-out;
     padding: 5px;
     padding-top: 25px;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-  }
-  
-  .colourBlock:hover {
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.colourBlock:hover {
     transform: scale(1.5);
     transition: all .2s ease-in-out;
-  }
+}
 
- 
-
-
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .colourBlock {
-      font-size: 10px;
+        font-size: 10px;
     }
-  }
+}

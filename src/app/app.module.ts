@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
+import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
+    SearchByColourPipe,
 
     
   ],
