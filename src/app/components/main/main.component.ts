@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
 
    this.investorService.getMatchInfo().subscribe((data: any) => {
       this.fullList = data;
-      this.colourList = this.selectionPages(data, 1000).reverse();
+      this.colourList = this.selectionPages(data, 2000).reverse();
       this.displayList = this.colourList[this.colourList.length - 1];
     }); 
    

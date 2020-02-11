@@ -11,7 +11,7 @@
     </div>
 </section>
 <section class="colourContainer" *ngIf="searchText <= 1">
-    <div *ngFor="let col of displayList" class="colourBlock" [style.background]="col.hex" ata-toggle="tooltip" data-placement="top" title="Click to Copy Hex to Clipboard">
+    <div *ngFor="let col of displayList" class="colourBlock" [style.background]="col.hex" data-toggle="tooltip" data-placement="top" title="Click to Copy Hex to Clipboard">
         <p>{{col.name}}</p>
         <p>{{col.hex}}</p>
     </div>
