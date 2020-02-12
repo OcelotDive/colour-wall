@@ -42,7 +42,7 @@ export class MainComponent implements OnInit {
     this.displayList = this.colourList[index];
   }
 
-  copyToClipBoard(element) {
+  copyToClipBoard(element: Element) {
       const textArea = document.createElement('textarea');
       textArea.style.opacity= '0';
       textArea.value = element.innerHTML;
