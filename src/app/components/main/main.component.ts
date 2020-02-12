@@ -42,6 +42,19 @@ export class MainComponent implements OnInit {
     this.displayList = this.colourList[index];
   }
 
+  copyToClipBoard(value) {
+
+    const box = document.createElement('textarea');
+      box.style.opacity= '0';
+      box.value = value.innerHTML;
+      value.appendChild(box)
+      box.focus();
+      box.select();
+      document.execCommand('copy');
+      value.removeChild(box);
+      
+  }
+
 
   ngOnInit() {
    
