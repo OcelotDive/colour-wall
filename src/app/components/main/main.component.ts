@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
 
    this.investorService.getMatchInfo().subscribe((data: any) => {
       this.fullList = data;
-      this.colourList = this.selectionPages(data, 2000).reverse();
+      this.colourList = this.selectionPages(data, 2100).reverse();
       this.displayList = this.colourList[this.colourList.length - 1];
     }); 
    
@@ -42,17 +42,15 @@ export class MainComponent implements OnInit {
     this.displayList = this.colourList[index];
   }
 
-  copyToClipBoard(value) {
-
-    const box = document.createElement('textarea');
-      box.style.opacity= '0';
-      box.value = value.innerHTML;
-      value.appendChild(box)
-      box.focus();
-      box.select();
+  copyToClipBoard(element) {
+      const textArea = document.createElement('textarea');
+      textArea.style.opacity= '0';
+      textArea.value = element.innerHTML;
+      element.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
       document.execCommand('copy');
-      value.removeChild(box);
-      
+      element.removeChild(textArea);    
   }
 
 

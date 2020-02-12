@@ -47,6 +47,10 @@ form {
     margin-bottom: 40px;
 }
 
+.tabWrapper {
+    margin: 3px;
+}
+
 .tabLabel {
     width: 100%;
     background: #000000;
