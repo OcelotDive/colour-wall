@@ -28,7 +28,7 @@
 }
 
 #colourSearch {
-    width: 24%;
+    width: 50%;
 }
 
 form {
@@ -49,15 +49,11 @@ form {
 
 .tabLabel {
     width: 100%;
-    background: #6190E8;
+    background: #000000;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
+    background: -webkit-linear-gradient(to right, #434343, #000000);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #A7BFE8, #6190E8);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #434343, #000000);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     cursor: pointer;
     font-weight: bold;
@@ -77,6 +73,7 @@ form {
     /* Standard */
     text-indent: 13px;
     border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .tabLabel:hover {
@@ -131,6 +128,7 @@ form {
     /* IE10+/Edge */
     user-select: none;
     /* Standard */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .colourBlock:hover {
@@ -139,9 +137,11 @@ form {
 }
 
 .colourBlock:active::after {
-    content: 'Copied';
+    content: 'COPIED';
     padding-bottom: 70%;
     font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 5px 5px 5px #000;
 }
 
 @media screen and (max-width: 600px) {
